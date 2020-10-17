@@ -1,19 +1,14 @@
-var expect = chai.expect;
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
 
-describe("input Vars", function() {
-  it('should return the string "odd" if a number IS NOT evenly divisible by 2', function() {
-    var num = 777;
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
-    var result = oddOrEven(num);
+  passwordText.value = password;
 
-    expect(result).to.eql("odd");
-  });
+}
 
-  it('should return the string "even" if a number IS evenly divisible by 2', function() {
-    var num = 1002;
-
-    var result = oddOrEven(num);
-
-    expect(result).to.eql("even");
-  });
-});
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
